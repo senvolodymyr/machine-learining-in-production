@@ -1,0 +1,10 @@
+name: Deploy Image to AWS ECR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify_dependencies:
+    runs-on: ubuntu-latest
