@@ -1,0 +1,24 @@
+[project]
+name = "mlip"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Volodymyr Sen", email = "volodymyr.sen@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+mlip = "mlip:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.398",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+]
