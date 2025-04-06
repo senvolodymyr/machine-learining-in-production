@@ -1,13 +1,17 @@
 name: Deploy Image to AWS ECR
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
       - main
 
 jobs:
-  deploy:
+  package_build:
+    name: Build Python Wheel
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Deploying to AWS ECR"
+      - uses: ./.github/actions/setup
+      - run: uv build
