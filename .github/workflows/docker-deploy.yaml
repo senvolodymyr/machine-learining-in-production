@@ -7,11 +7,14 @@ on:
       - main
 
 jobs:
-  package_build:
-    name: Build Python Wheel
+  verify_dependencies:
+    name: Build and Push Docker Image to the ECR
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-      - run: uv build
+      - uses: ./.github/actions/assume-role
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
