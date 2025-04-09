@@ -1,8 +1,8 @@
-from machine_learning_builder import get_project_name
+from machine_learning_builder import get_dummy_response
 
 
 def main() -> None:
-    greeting = f"Hello, {get_project_name()}!"
+    greeting = get_dummy_response()
     print(greeting)
 
 
