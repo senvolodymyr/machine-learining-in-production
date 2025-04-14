@@ -7,10 +7,6 @@ on:
       - main
 
 env:
-<<<<<<< HEAD
-  AWS_REGION: eu-central-1
-=======
->>>>>>> bbf1d8c (Added basic Kubernetes components)
   ECR_REPOSITORY: z3y7u1c1/machine-learning-in-production
 
 jobs:
