@@ -7,7 +7,10 @@ on:
       - main
 
 env:
+<<<<<<< HEAD
   AWS_REGION: eu-central-1
+=======
+>>>>>>> bbf1d8c (Added basic Kubernetes components)
   ECR_REPOSITORY: z3y7u1c1/machine-learning-in-production
 
 jobs:
@@ -22,7 +25,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR
         id: login-ecr
